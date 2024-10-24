@@ -46,7 +46,7 @@ class LoginNotifier extends StateNotifier<LoginState> {
     final email = prefs.getString('email') ?? '';
     state = state.copyWith(
       isLoggedIn: isLoggedIn,
-      email: email.isNotEmpty ? Email.dirty(email) : null,
+      email: email.isNotEmpty ? Email.dirty(email) : const Email.pure(),
     );
   }
 
